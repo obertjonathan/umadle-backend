@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: umadle-postgres
+    environment:
+      POSTGRES_DB: umadle
+      POSTGRES_USER: umadle
+      POSTGRES_PASSWORD: umadle
+    ports:
+      - "5432:5432"
+    volumes:
+      - umadle-pgdata:/var/lib/postgresql/data
+
+volumes:
+  umadle-pgdata:
